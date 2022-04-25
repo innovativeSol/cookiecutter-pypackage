@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-project-wizard" class="md-skip">
+        <a href="#python-project-wizard-for-aws-codeartifact" class="md-skip">
           Skip to content
         </a>
       
@@ -310,11 +310,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#python-project-wizard" class="md-nav__link">
-    Python Project Wizard
+  <a href="#python-project-wizard-for-aws-codeartifact" class="md-nav__link">
+    Python Project Wizard for AWS CodeArtifact
   </a>
   
-    <nav class="md-nav" aria-label="Python Project Wizard">
+    <nav class="md-nav" aria-label="Python Project Wizard for AWS CodeArtifact">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -327,6 +327,13 @@
           <li class="md-nav__item">
   <a href="#quickstart" class="md-nav__link">
     Quickstart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-information" class="md-nav__link">
+    Template Information
   </a>
   
 </li>
@@ -449,11 +456,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#python-project-wizard" class="md-nav__link">
-    Python Project Wizard
+  <a href="#python-project-wizard-for-aws-codeartifact" class="md-nav__link">
+    Python Project Wizard for AWS CodeArtifact
   </a>
   
-    <nav class="md-nav" aria-label="Python Project Wizard">
+    <nav class="md-nav" aria-label="Python Project Wizard for AWS CodeArtifact">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -466,6 +473,13 @@
           <li class="md-nav__item">
   <a href="#quickstart" class="md-nav__link">
     Quickstart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-information" class="md-nav__link">
+    Template Information
   </a>
   
 </li>
@@ -502,8 +516,9 @@
                   <h1>Introduction</h1>
                 
                 <!-- BEGIN INCLUDE ../README.md   -->
-<h2 id="python-project-wizard">Python Project Wizard<a class="headerlink" href="#python-project-wizard" title="Permanent link">&para;</a></h2>
-<p>A tool for creating skeleton python project, built with popular develop tools and conform to best practice.</p>
+<h2 id="python-project-wizard-for-aws-codeartifact">Python Project Wizard for AWS CodeArtifact<a class="headerlink" href="#python-project-wizard-for-aws-codeartifact" title="Permanent link">&para;</a></h2>
+<p>A tool for creating skeleton Python project, built with popular develop tools and conform to best practice. The packages are setup to deploy to AWS CodeArtifact.</p>
+<p>The template system used is <a href="https://cookiecutter.readthedocs.io/en/1.7.3/">CookieCutter</a>.</p>
 <p><a href="https://github.com/innovativeSol/innovative-pip-cookiecutter-pypackage"><img alt="CI Status" src="https://github.com/innovativeSol/innovative-pip-cookiecutter-pypackage/actions/workflows/release.yml/badge.svg" /></a></p>
 <h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
 <p>This tool will create Python project with the following features:</p>
@@ -518,8 +533,8 @@
 <li><a href="https://pre-commit.com/">Pre-commit hooks</a>: Formatting/linting anytime when commit/run local tox/CI</li>
 <li><a href="https://mkdocstrings.github.io/">Mkdocstrings</a>: Auto API doc generation</li>
 <li>Command line interface using <a href="https://github.com/google/python-fire">Python Fire</a> (optional)</li>
-<li>Continuouse Integration/Deployment by <a href="https://github.com/features/actions">github actions</a>, includes:</li>
-<li>publish dev build/official release to TestPyPI/PyPI automatically when CI success</li>
+<li>Continuous Integration/Deployment by <a href="https://github.com/features/actions">github actions</a>, includes:</li>
+<li>publish dev build/official release to <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">AWS CodeArtifact</a> automatically when CI success</li>
 <li>publish documents automatically when CI success</li>
 <li>extract change log from github and integrate with release notes automatically</li>
 <li>Host your documentation from <a href="https://pages.github.com/..">Git Pages</a> with zero-config</li>
@@ -533,7 +548,96 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="go">  aws-ppw</span>
 </code></pre></div>
 </td></tr></table>
-<p>Then follow <strong><a href="https://innovativeSol.github.io/innovative-pip-cookiecutter-pypackage/tutorial/">Tutorial</a></strong> to finish other configurations.</p>
+<h3 id="template-information">Template Information<a class="headerlink" href="#template-information" title="Permanent link">&para;</a></h3>
+<p>The CookieCutter template starts with the {{cookiecutter.project_slug}}, and yes the {}s are part of the folder name.</p>
+<p>The output of the template will be the following. We will use a project_slug of my_project.</p>
+<p>The project layout should looks like:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="go">.</span>
+<span class="go">└── my_project</span>
+<span class="go">    ├── AUTHORS.md</span>
+<span class="go">    ├── CONTRIBUTING.md</span>
+<span class="go">    ├── .coveragerc</span>
+<span class="go">    ├── dist</span>
+<span class="go">    ├── docs</span>
+<span class="go">    │   ├── api.md</span>
+<span class="go">    │   ├── authors.md</span>
+<span class="go">    │   ├── contributing.md</span>
+<span class="go">    │   ├── history.md</span>
+<span class="go">    │   ├── index.md</span>
+<span class="go">    │   ├── installation.md</span>
+<span class="go">    │   └── usage.md</span>
+<span class="go">    ├── .editorconfig</span>
+<span class="go">    ├── .flake8</span>
+<span class="go">    ├── .git</span>
+<span class="go">    ├── .github</span>
+<span class="go">    │   ├── ISSUE_TEMPLATE.md</span>
+<span class="go">    │   └── workflows</span>
+<span class="go">    │       ├── dev.yml</span>
+<span class="go">    │       └── release.yml</span>
+<span class="go">    ├── .gitignore</span>
+<span class="go">    ├── HISTORY.md</span>
+<span class="go">    ├── .isort.cfg</span>
+<span class="go">    ├── LICENSE</span>
+<span class="go">    ├── mkdocs.yml</span>
+<span class="go">    ├── poetry.lock</span>
+<span class="go">    ├── my_project</span>
+<span class="go">    │   ├── cli.py</span>
+<span class="go">    │   ├── __init__.py</span>
+<span class="go">    │   └── my_project.py</span>
+<span class="go">    ├── .pre-commit-config.yaml</span>
+<span class="go">    ├── pyproject.toml</span>
+<span class="go">    ├── pyrightconfig.json</span>
+<span class="go">    ├── README.md</span>
+<span class="go">    ├── site</span>
+<span class="go">    ├── tests</span>
+<span class="go">    │   ├── __init__.py</span>
+<span class="go">    │   └── test_my_project.py</span>
+<span class="go">    └── tox.ini</span>
+</code></pre></div>
+</td></tr></table>
+<p>If you look through the contents of the <code>{{cookiecutter.project_slug}}</code> folder, you will notice that there is a <code>github</code> folder instead of a <code>.github</code> folder. This is because CookieCutter does not process files in folders that start with a period. The renaming of this folder is done in the CookieCutter post generation hook found in <code>hooks/post_gen_project.py</code>.</p>
+<p>As can be seen above, the contents of top level <code>my_project</code> will contain a <code>.git</code> folder. You can set the origin in this configuration or copy everything except that folder to an empty cloned repository of your choice. To install the pre-commit hooks, make sure to run <code>pre-commit install</code> from the root of the repository.</p>
+<p>Follow <strong><a href="https://innovativeSol.github.io/innovative-pip-cookiecutter-pypackage/tutorial/">Tutorial</a></strong> to finish other configurations.</p>
 <h3 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h3>
 <p>This repo is forked from <a href="https://github.com/zillionare/cookiecutter-pypackage">zillionare/cookiecutter-pypackage</a>, and borrowed some updates from <a href="https://github.com/ma7555/cookiecutter-pypackage">ma7555</a></p>
 <!-- END INCLUDE -->

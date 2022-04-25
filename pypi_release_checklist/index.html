@@ -494,6 +494,14 @@
 <p>Check out release branch, merge all changes from master/main to release</p>
 </li>
 <li>
+<p>Run the tests:</p>
+<blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>tox
+</code></pre></div>
+</td></tr></table>
+</blockquote>
+</li>
+<li>
 <p>Update HISTORY.md</p>
 <p>Be noticed that github workflow will generate a changelog for you automatically.</p>
 </li>
@@ -508,45 +516,34 @@ git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;
 </blockquote>
 </li>
 <li>
-<p>Update version number (can also be patch or major)</p>
+<p>Update version number. The following are the actions taken in the <code>push-version.ps1</code> script at the root of the repository.</p>
 <blockquote>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>poetry patch
-</code></pre></div>
-</td></tr></table>
+<p>``` powershell
+<!-- BEGIN INCLUDE ../push-version.ps1   -->
+ param(
+ [Parameter(Mandatory,
+     HelpMessage="Enter a valid version number #.#.#")]
+ [ValidatePattern("\d+.\d+.\d+")]
+ [string]$version,
+ [Parameter(Mandatory)]
+ [string]$message
+ )</p>
 </blockquote>
 </li>
-<li>
-<p>Run the tests:</p>
-<blockquote>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>tox
+</ol>
+<p>poetry version $version # update the version in pyproject.toml
+ git add -A # add the updated pyproject.toml
+ git commit -m "v$version"
+ git tag v$version -m $message
+ git push --atomic origin master v$version
+ <!-- END INCLUDE --></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>&gt; ```
 </code></pre></div>
 </td></tr></table>
-</blockquote>
-</li>
-<li>
-<p>Push the commit to release branch:</p>
-<blockquote>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push
-</code></pre></div>
-</td></tr></table>
-</blockquote>
-</li>
-<li>
-<p>Push the tags, creating the new release on both GitHub and PyPI:</p>
-<blockquote>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git tag %tag_name%
-git push --tags
-</code></pre></div>
-</td></tr></table>
-</blockquote>
-<p>tag_name has to be started with 'v'(lower case), to leverage github release workflow.</p>
-</li>
-<li>
-<p>Check the PyPI listing page to make sure that the README, release
-    notes, and roadmap display properly. If tox test passwed, this should be ok, since
-    we have already run twine check during tox test.</p>
-</li>
+<ol>
+<li>Check the PyPI listing page to make sure that the README, release
+    notes, and roadmap display properly. If tox test passed, this should be ok, since
+    we have already run twine check during tox test.</li>
 </ol>
 <h3 id="about-this-checklist">About This Checklist<a class="headerlink" href="#about-this-checklist" title="Permanent link">&para;</a></h3>
 <p>This checklist is adapted from:</p>
@@ -554,7 +551,7 @@ git push --tags
 <li><a href="https://gist.github.com/audreyr/5990987">https://gist.github.com/audreyr/5990987</a></li>
 <li><a href="https://gist.github.com/audreyr/9f1564ea049c14f682f4">https://gist.github.com/audreyr/9f1564ea049c14f682f4</a></li>
 </ul>
-<p>It assumes that you are using all features of Cookiecutter PyPackage.</p>
+<p>It assumes that you are using all features of CookieCutter PyPackage.</p>
                 
               
               
