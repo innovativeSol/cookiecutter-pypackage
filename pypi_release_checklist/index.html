@@ -516,34 +516,51 @@ git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;
 </blockquote>
 </li>
 <li>
-<p>Update version number. The following are the actions taken in the <code>push-version.ps1</code> script at the root of the repository.</p>
+<p>Update version number. The following are an example of executing and the contents of the <code>push-version.ps1</code> script at the root of the repository.</p>
 <blockquote>
-<p>``` powershell
-<!-- BEGIN INCLUDE ../push-version.ps1   -->
- param(
- [Parameter(Mandatory,
-     HelpMessage="Enter a valid version number #.#.#")]
- [ValidatePattern("\d+.\d+.\d+")]
- [string]$version,
- [Parameter(Mandatory)]
- [string]$message
- )</p>
-</blockquote>
-</li>
-</ol>
-<p>poetry version $version # update the version in pyproject.toml
- git add -A # add the updated pyproject.toml
- git commit -m "v$version"
- git tag v$version -m $message
- git push --atomic origin master v$version
- <!-- END INCLUDE --></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>&gt; ```
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="nb">push-version</span><span class="p">.</span><span class="n">ps1</span> <span class="n">1</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">25</span> <span class="s2">&quot;documentation updates&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<ol>
-<li>Check the PyPI listing page to make sure that the README, release
+</blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;!--</span> <span class="k">BEGIN</span> <span class="n">INCLUDE</span> <span class="p">../</span><span class="nb">push-version</span><span class="p">.</span><span class="n">ps1</span>   <span class="p">--&gt;</span>
+<span class="k">param</span><span class="p">(</span>
+    <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">,</span>
+        <span class="k">HelpMessage</span><span class="p">=</span><span class="s2">&quot;Enter a valid version number #.#.#&quot;</span><span class="p">)]</span>
+    <span class="p">[</span><span class="k">ValidatePattern</span><span class="p">(</span><span class="s2">&quot;\d+\.\d+\.\d+&quot;</span><span class="p">)]</span>
+    <span class="no">[string]</span><span class="nv">$version</span><span class="p">,</span>
+    <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">)]</span>
+    <span class="no">[string]</span><span class="nv">$message</span>
+<span class="p">)</span>
+
+<span class="n">poetry</span> <span class="n">version</span> <span class="nv">$version</span> <span class="c"># update the version in pyproject.toml</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">-A</span> <span class="c"># add the updated pyproject.toml</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&quot;v$version&quot;</span>
+<span class="n">git</span> <span class="n">tag</span> <span class="n">v</span><span class="nv">$version</span> <span class="n">-m</span> <span class="nv">$message</span>
+<span class="n">git</span> <span class="n">push</span> <span class="p">-</span><span class="n">-atomic</span> <span class="n">origin</span> <span class="n">master</span> <span class="n">v</span><span class="nv">$version</span>
+<span class="p">&lt;!--</span> <span class="k">END</span> <span class="n">INCLUDE</span> <span class="p">--&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Check the PyPI listing page to make sure that the README, release
     notes, and roadmap display properly. If tox test passed, this should be ok, since
-    we have already run twine check during tox test.</li>
+    we have already run twine check during tox test.</p>
+</li>
 </ol>
 <h3 id="about-this-checklist">About This Checklist<a class="headerlink" href="#about-this-checklist" title="Permanent link">&para;</a></h3>
 <p>This checklist is adapted from:</p>

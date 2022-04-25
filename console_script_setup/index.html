@@ -344,26 +344,32 @@
     Console Script Setup
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Console Script Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     How It Works
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#more-details" class="md-nav__link">
     More Details
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -447,26 +453,32 @@
     Console Script Setup
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Console Script Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     How It Works
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#more-details" class="md-nav__link">
     More Details
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -491,23 +503,23 @@
                 
                 <h2 id="console-script-setup">Console Script Setup<a class="headerlink" href="#console-script-setup" title="Permanent link">&para;</a></h2>
 <p>Optionally, your package can include a console script using <a href="https://google.github.io/python-fire/guide/">Fire</a></p>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
 <p>If the <code>command_line_interface</code> option is set to <code>fire</code> during setup, cookiecutter
  will add a file <code>cli.py</code> in the project_slug subdirectory. An entry point is added to
 pyproject.toml that points to the main function in cli.py.</p>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
 <p>To use the console script in development:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>poetry install
 </code></pre></div>
 </td></tr></table>
 <p><code>projectdir</code> should be the top level project directory with the
 pyproject.toml file</p>
-<p>Then execute:
+<p>Then execute:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">$your_package_name</span> <span class="nb">help</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
 <p>it will show your package name, project short description and exit.</p>
-<h2 id="more-details">More Details<a class="headerlink" href="#more-details" title="Permanent link">&para;</a></h2>
+<h3 id="more-details">More Details<a class="headerlink" href="#more-details" title="Permanent link">&para;</a></h3>
 <p>You can read more about Python Fire at <a href="https://google.github.io/python-fire/guide/">Fire</a></p>
                 
               
