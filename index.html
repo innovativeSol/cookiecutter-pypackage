@@ -550,6 +550,7 @@
 </td></tr></table>
 <h3 id="template-information">Template Information<a class="headerlink" href="#template-information" title="Permanent link">&para;</a></h3>
 <p>The Cookiecutter template starts with the <code>{{cookiecutter.project_slug}}</code>, and yes the {}s are part of the folder name.</p>
+<p>If you look through the contents of the <code>{{cookiecutter.project_slug}}</code> folder, you will notice that there is a <code>github</code> folder instead of a <code>.github</code> folder. This is because Cookiecutter does not process files in folders that start with a period. The renaming of this folder is done in the Cookiecutter post generation hook found in <code>hooks/post_gen_project.py</code>.</p>
 <p>The output of the template will be the following. We will use a <code>project_slug</code> of <code>my_project</code>.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -634,7 +635,6 @@
 <span class="go">    └── tox.ini</span>
 </code></pre></div>
 </td></tr></table>
-<p>If you look through the contents of the <code>{{cookiecutter.project_slug}}</code> folder, you will notice that there is a <code>github</code> folder instead of a <code>.github</code> folder. This is because Cookiecutter does not process files in folders that start with a period. The renaming of this folder is done in the Cookiecutter post generation hook found in <code>hooks/post_gen_project.py</code>.</p>
 <p>Notice the contents of top level <code>my_project</code> will contain a <code>.git</code> folder. You can set the origin in this git configuration or copy everything except that folder to an empty cloned repository of your choice. To install the pre-commit hooks, make sure to run <code>pre-commit install</code> from the root of the repository.</p>
 <p>Follow <strong><a href="https://innovativeSol.github.io/innovative-pip-cookiecutter-pypackage/tutorial/">Tutorial</a></strong> to finish other configurations.</p>
 <h3 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h3>
