@@ -521,10 +521,7 @@ git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;!--</span> <span class="k">BEGIN</span> <span class="n">INCLUDE</span> <span class="p">../</span><span class="nb">push-version</span><span class="p">.</span><span class="n">ps1</span>   <span class="p">--&gt;</span>
-<span class="k">param</span><span class="p">(</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">param</span><span class="p">(</span>
     <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">,</span>
         <span class="k">HelpMessage</span><span class="p">=</span><span class="s2">&quot;Enter a valid version number #.#.#&quot;</span><span class="p">)]</span>
     <span class="p">[</span><span class="k">ValidatePattern</span><span class="p">(</span><span class="s2">&quot;\d+\.\d+\.\d+&quot;</span><span class="p">)]</span>
@@ -538,7 +535,6 @@ git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;
 <span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&quot;v$version&quot;</span>
 <span class="n">git</span> <span class="n">tag</span> <span class="n">v</span><span class="nv">$version</span> <span class="n">-m</span> <span class="nv">$message</span>
 <span class="n">git</span> <span class="n">push</span> <span class="p">-</span><span class="n">-atomic</span> <span class="n">origin</span> <span class="n">master</span> <span class="n">v</span><span class="nv">$version</span>
-<span class="p">&lt;!--</span> <span class="k">END</span> <span class="n">INCLUDE</span> <span class="p">--&gt;</span>
 </code></pre></div>
 </td></tr></table>
 </li>

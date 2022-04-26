@@ -722,7 +722,8 @@ If you choose yes, then Cookiecutter will attempt to install pre-commit hooks fo
 <p>except above settings, for CI/CD, you'll also need configure gitub repsitory secrets
 at page repo &gt; settings &gt; secrtes, and add the following secrets:</p>
 <ul>
-<li>PERSONAL_TOKEN (required for publishing document to git pages)</li>
+<li>DEV_CODEARTIFACT_ROLE_ARN (Required for AWS access. May already be set as an organization secret.)</li>
+<li>PROD_CODEARTIFACT_ROLE_ARN (Required for AWS access. May already be set as an organization secret.)</li>
 </ul>
 </details>
                 
