@@ -556,15 +556,12 @@ there's none, you have to create one now.</p>
 <details class="question" open="open">
 <summary>Question</summary>
 <h2 id="why-not-travis-ci">Why not travis CI?<a class="headerlink" href="#why-not-travis-ci" title="Permanent link">&para;</a></h2>
-<p>Travis CI is a great service, however, github actions is super convenient, less configuration
-, better integration. Less configuration, less error prone.</p>
+<p>Travis CI is a great service, however, github actions is super convenient, less configuration , better integration. Less configuration, less error prone.</p>
 </details>
 <details class="question" open="open">
 <summary>Question</summary>
 <h2 id="why-not-read-the-docs">Why not read the docs?<a class="headerlink" href="#why-not-read-the-docs" title="Permanent link">&para;</a></h2>
-<p>Same reason as above. Git pages is convenient than read the docs, it requires no
-further configuration, except access token. As to read the docs, you need to
-write v2 config file, plus several settings on web pages.</p>
+<p>Same reason as above. Git pages is convenient than read the docs, it requires no further configuration, except access token. As to read the docs, you need to write v2 config file, plus several settings on web pages.</p>
 </details>
 <details class="question" open="open">
 <summary>Question</summary>
@@ -625,7 +622,30 @@ way. Poetry and Markdown, are the two key factors driven me develop this templat
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
-<span class="normal">49</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>## Templated Values
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>## Templated Values
 
 The following appear in various parts of your generated project.
 
@@ -636,7 +656,25 @@ email
 Your email address.
 
 github_user_or_org_name  
-Your GitHub user or organization name.
+Your GitHub user or organization name where the new package repository will be hosted.
+
+dev_aws_region
+The AWS region for the dev/test CodeArtifact repository. Defaults to us-east-1
+
+dev_aws_codeartifact_domain
+The name of the dev/test CodeArtifact domain.
+
+dev_aws_codeartifact_repository
+The name of the dev/test CodeArtifact repository.
+
+prod_aws_region
+The AWS region for the production CodeArtifact repository. Defaults to us-east-1
+
+prod_aws_codeartifact_domain
+The name of the production CodeArtifact domain.
+
+prod_aws_codeartifact_repository
+The name of the production CodeArtifact repository.
 
 project_name  
 The name of your new Python package project. This is used in
@@ -650,38 +688,41 @@ project_name.
 project_short_description  
 A 1-sentence description of what your Python package does.
 
-release_date  
-The date of the first release.
-
-year  
-The year of the initial package copyright in the license file.
+repository_name
+The GitHub repository name. Defaults to the project_slug with the underscores (_) turned to hyphens (-). 
 
 version  
 The starting version number of the package.
 
-install_precommit_hooks
-If you choose yes, then cookiecutter will install pre-commit hooks for you.
+## Options
+
+The following package configuration options set up different features for your project.
+
+use_pytest
+If you choose yes, then Cookiecutter will include unit PyTest unit tests.
+
+command_line_interface  
+Whether to create a console script using Python Fire. Console script
+entry point will match the project_slug. Options: [&quot;fire&quot;, &quot;No
+command-line interface&quot;]
+
+create_author_file
+If you choose yes, then Cookiecutter will include an AUTHORS.md file for acknowledging contributors.
+
+open_source_license
+Selects an open source license for the package. Options: [&quot;MIT&quot;, &quot;BSD-3-Clause&quot;, &quot;ISC&quot;, &quot;Apache-2.0&quot;, &quot;GPL-3.0-only&quot;, &quot;Not open source&quot;]
 
 docstrings_style
 one of `google, numpy, rst`. It&#39;s required by flake8-docstrings.
 
-## Options
-
-The following package configuration options set up different features
-for your project.
-
-command_line_interface  
-Whether to create a console script using Python Fire. Console script
-entry point will match the project_slug. Options: \[&#39;fire&#39;, &quot;No
-command-line interface&quot;\]
+install_precommit_hooks
+If you choose yes, then Cookiecutter will attempt to install pre-commit hooks for you.
 </code></pre></div>
 </td></tr></table>
 <p>except above settings, for CI/CD, you'll also need configure gitub repsitory secrets
 at page repo &gt; settings &gt; secrtes, and add the following secrets:</p>
 <ul>
 <li>PERSONAL_TOKEN (required for publishing document to git pages)</li>
-<li>TEST_PYPI_API_TOKEN (required for publishing dev release to testpypi)</li>
-<li>PYPI_API_TOKEN (required for publish )</li>
 </ul>
 </details>
                 

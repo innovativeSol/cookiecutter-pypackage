@@ -518,7 +518,7 @@
                 <!-- BEGIN INCLUDE ../README.md   -->
 <h2 id="python-project-wizard-for-aws-codeartifact">Python Project Wizard for AWS CodeArtifact<a class="headerlink" href="#python-project-wizard-for-aws-codeartifact" title="Permanent link">&para;</a></h2>
 <p>A tool for creating skeleton Python project, built with popular develop tools and conform to best practice. The packages are setup to deploy to AWS CodeArtifact.</p>
-<p>The template system used is <a href="https://cookiecutter.readthedocs.io/en/1.7.3/">CookieCutter</a>.</p>
+<p>The template system used is <a href="https://cookiecutter.readthedocs.io/en/1.7.3/">Cookiecutter</a>.</p>
 <p><a href="https://github.com/innovativeSol/innovative-pip-cookiecutter-pypackage"><img alt="CI Status" src="https://github.com/innovativeSol/innovative-pip-cookiecutter-pypackage/actions/workflows/release.yml/badge.svg" /></a></p>
 <h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
 <p>This tool will create Python project with the following features:</p>
@@ -549,7 +549,7 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="template-information">Template Information<a class="headerlink" href="#template-information" title="Permanent link">&para;</a></h3>
-<p>The CookieCutter template starts with the <code>{{cookiecutter.project_slug}}</code>, and yes the {}s are part of the folder name.</p>
+<p>The Cookiecutter template starts with the <code>{{cookiecutter.project_slug}}</code>, and yes the {}s are part of the folder name.</p>
 <p>The output of the template will be the following. We will use a <code>project_slug</code> of <code>my_project</code>.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -634,7 +634,7 @@
 <span class="go">    └── tox.ini</span>
 </code></pre></div>
 </td></tr></table>
-<p>If you look through the contents of the <code>{{cookiecutter.project_slug}}</code> folder, you will notice that there is a <code>github</code> folder instead of a <code>.github</code> folder. This is because CookieCutter does not process files in folders that start with a period. The renaming of this folder is done in the CookieCutter post generation hook found in <code>hooks/post_gen_project.py</code>.</p>
+<p>If you look through the contents of the <code>{{cookiecutter.project_slug}}</code> folder, you will notice that there is a <code>github</code> folder instead of a <code>.github</code> folder. This is because Cookiecutter does not process files in folders that start with a period. The renaming of this folder is done in the Cookiecutter post generation hook found in <code>hooks/post_gen_project.py</code>.</p>
 <p>Notice the contents of top level <code>my_project</code> will contain a <code>.git</code> folder. You can set the origin in this git configuration or copy everything except that folder to an empty cloned repository of your choice. To install the pre-commit hooks, make sure to run <code>pre-commit install</code> from the root of the repository.</p>
 <p>Follow <strong><a href="https://innovativeSol.github.io/innovative-pip-cookiecutter-pypackage/tutorial/">Tutorial</a></strong> to finish other configurations.</p>
 <h3 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h3>
